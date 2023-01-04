@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const orderList = document.querySelector("ul#order-list")
     function orderButtonFunc() {
-        const orderButton = document.querySelector("input#order-button");
+        const orderButton = document.querySelector("button#order-button");
         orderButton.addEventListener("click", (e) => {
             const order = document.createElement("li");
             order.textContent = 1`x${globalCoffee.title}`
