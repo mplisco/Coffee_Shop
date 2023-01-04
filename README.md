@@ -1,4 +1,4 @@
-# Coffee_Shop
+# Founders House Coffee Shop
 
 A simple coffee shop program using html/css, javascript, and an external API
 
