@@ -36,9 +36,10 @@ body {
 
 #coffee-menu img {
     flex: 0 1 auto;
-    height: 100px;
+    height: 50px;
     margin-right: 0.5rem;
     cursor: pointer;
+    border-radius: 0.25rem;
   }
 
   #coffee-menu img:last-child {
@@ -53,8 +54,8 @@ body {
   }
 
   .coffee-img {
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
     margin-right: 0.5rem;
   }
 
@@ -63,6 +64,16 @@ body {
     color: #c4b7a7;
     font-size: 1.5rem;
     font-weight: bold;
+  }
+
+  .button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 0.25rem;
+    background-color: #000;
   }
 
   
