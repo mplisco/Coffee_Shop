@@ -74,9 +74,10 @@ body {
     left: 0;
     border-radius: 0.25rem;
     background-color: #c4b747;
+    font-size: 20px;
   }
 
-  #order-list {
+  #order-list li{
     background-color: #c4b7a7;
     border-radius: 0.25rem;
     padding: 0.5rem;
