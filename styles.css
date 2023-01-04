@@ -1,0 +1,41 @@
+body {
+    padding: 1rem;
+    text-align: center;
+    background-color: #743c3f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  header {
+    padding: 0.5rem;
+    width: 100%;
+    color: #c4b7a7;
+    background-color: #343139;
+  }
+
+  #coffee-menu {
+    display: flex;
+  overflow-x: auto;
+  margin: 1rem 0;
+  max-width: calc(100vw - 2rem);
+  color: #c4b7a7;
+ }
+
+#coffee-menu img {
+    flex: 0 1 auto;
+    height: 150px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+
+  #coffee-menu img:last-child {
+    margin-right: 0;
+  }
+
+  #coffee-description {
+    position: relative;
+    color: #c4b7a7
+  }
+
