@@ -1,13 +1,25 @@
-document.addEventListener("DOMContentLoaded", ()=> {
+document.addEventListener("DOMContentLoaded", () => {
 
     const url = "https://api.sampleapis.com/coffee/hot"
 
-    const getData = () => {
+    let globalCoffee;
 
+    const getData = () => {
+        fetch(url)
+            .then(res => res.json())
+            .then(coffeeDrinks => {
+                coffeeDrinks.map(coffee => {
+                    globalCoffee = coffee;
+                    coffeeMenu(globalCoffee);
+                })
+            })
+    }
+    getData();
+
+    function coffeeMenu() {
+        
     }
 
 
-
-
-// end of DOMContentLoaded
+    // end of DOMContentLoaded
 })
