@@ -4,6 +4,7 @@ A simple coffee shop program using html/css, javascript, and an external API
 
 
 ## General Description
+general description placeholder
 
 ## Features
 ### Backend API Endpoints
@@ -23,7 +24,7 @@ $ git clone git@github.com:mplisco/Coffee_Shop.git
 ```
 
 
-## Install NodeJS
+### Install NodeJS
 Verify you are running a recent version of Node with:
 ```
 node -v
