@@ -67,16 +67,22 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
         ingredientList.replaceChildren()
-     coffee.ingredients.forEach(ingredient => {
+        coffee.ingredients.forEach(ingredient => {
         const coffeeIngredient = document.createElement("li");
         coffeeIngredient.innerText = ingredient;
 
 
         ingredientList.append(coffeeIngredient);
-    })
+        })
     }
 
 
+    function orderButtonFunc() {
+     const orderButton = document.querySelector("input#order-button");
+     orderButton.addEventListener("click", (e) => {
+       
+     })
+    }
 
 
 
