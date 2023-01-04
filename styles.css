@@ -36,7 +36,7 @@ body {
 
 #coffee-menu img {
     flex: 0 1 auto;
-    height: 150px;
+    height: 100px;
     margin-right: 0.5rem;
     cursor: pointer;
   }
@@ -53,7 +53,9 @@ body {
   }
 
   .coffee-img {
-    height: 150px;
+    height: 200px;
+    width: 200px;
+    margin-right: 0.5rem;
   }
 
   #coffee-ingredients {
@@ -63,3 +65,4 @@ body {
     font-weight: bold;
   }
 
+  
