@@ -26,6 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
      const coffeeImg = document.createElement("img");
      coffeeImg.src = coffee.image;
 
+     coffeeImg.addEventListener("mouseover", (e) => {
+         e.target.style.height = "75px"
+          e.target.style.width = "75px"
+
+          setTimeout(() => {
+          e.target.style.height = ""
+          e.target.style.width = ""
+          }, 500)
+     })
+
      coffeeImg.addEventListener("click", () => {
         globalCoffee = coffee
         coffeeDescription(globalCoffee);
@@ -57,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
         ingredientList.replaceChildren()
-         coffee.ingredients.forEach(ingredient => {
+     coffee.ingredients.forEach(ingredient => {
         const coffeeIngredient = document.createElement("li");
         coffeeIngredient.innerText = ingredient;
 
@@ -65,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ingredientList.append(coffeeIngredient);
     })
     }
-
 
 
 
