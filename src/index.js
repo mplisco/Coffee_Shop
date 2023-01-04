@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
 
     const url = "https://api.sampleapis.com/coffee/hot"
 
@@ -14,12 +13,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
             })
     }
+
     getData();
 
-    function coffeeMenu() {
-        
+    const coffeeMenuDiv = document.querySelector("div#coffee-menu");
+
+    function coffeeMenu(coffee) {
+     const coffeeImg = document.createElement("img");
+     coffeeImg.src = coffee.image;
+
+     coffeeMenuDiv.append(coffeeImg)
     }
 
-
-    // end of DOMContentLoaded
-})
