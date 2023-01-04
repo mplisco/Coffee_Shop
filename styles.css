@@ -28,8 +28,10 @@ body {
   overflow-x: auto;
   margin: 1rem 0;
   max-width: calc(1000vw - 1rem);
-  color: #c4b7a7;
+  color: #343139;
   font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
  }
 
 #coffee-menu img {
@@ -45,6 +47,15 @@ body {
 
   #coffee-description {
     position: relative;
-    color: #c4b7a7
+    color: #c4b7a7;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  #coffee-ingredients {
+    position: relative;
+    color: #c4b7a7;
+    font-size: 1.5rem;
+    font-weight: bold;
   }
 
