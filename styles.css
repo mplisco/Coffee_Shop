@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
   }
-  
+
   header {
     padding: 0.5rem;
     width: 100%;
@@ -50,6 +50,10 @@ body {
     color: #c4b7a7;
     font-size: 1.5rem;
     font-weight: bold;
+  }
+
+  .coffee-img {
+    height: 350px;
   }
 
   #coffee-ingredients {
