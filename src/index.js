@@ -40,7 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const ingredients = document.querySelector("div#coffee-ingredients")
     const price = document.querySelector("h4#coffee-cost");
 
-    
+     const ingredientList = document.createElement("ul")
+     ingredients.append(ingredientList);
 
     function coffeeDescription(coffee) {
       descriptionImg.src = coffee.image;
@@ -55,13 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
         price.textContent = "$3.50"
       }
 
-
-      coffee.ingredients.forEach(ingredient => {
-        const ingredientList = document.createElement("ul")
+        ingredientList.replaceChildren()
+         coffee.ingredients.forEach(ingredient => {
         const coffeeIngredient = document.createElement("li");
-        coffeeIngredient.textContent = ingredient;
+        coffeeIngredient.innerText = ingredient;
 
-        ingredients.append(ingredientList);
+
         ingredientList.append(coffeeIngredient);
     })
     }
