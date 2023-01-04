@@ -73,7 +73,13 @@ body {
     bottom: 0;
     left: 0;
     border-radius: 0.25rem;
-    background-color: #000;
+    background-color: #c4b747;
   }
 
+  #order-list {
+    background-color: #c4b7a7;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
   
