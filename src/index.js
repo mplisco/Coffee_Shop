@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 
     const url = "https://api.sampleapis.com/coffee/hot"
 
@@ -38,6 +40,8 @@
     const ingredients = document.querySelector("div#coffee-ingredients")
     const price = document.querySelector("h4#coffee-cost");
 
+    
+
     function coffeeDescription(coffee) {
       descriptionImg.src = coffee.image;
       coffeeName.textContent = coffee.title;
@@ -50,14 +54,23 @@
       } else if(coffee.ingredients.length >= 3) {
         price.textContent = "$3.50"
       }
-      
-      const ingredientList = document.createElement("ul")
-      ingredients.append(ingredientList);
+
 
       coffee.ingredients.forEach(ingredient => {
+        const ingredientList = document.createElement("ul")
         const coffeeIngredient = document.createElement("li");
         coffeeIngredient.textContent = ingredient;
 
+        ingredients.append(ingredientList);
         ingredientList.append(coffeeIngredient);
-      })
+    })
     }
+
+
+
+
+
+
+
+    // END OF DOMCONTENTLOADED
+})
