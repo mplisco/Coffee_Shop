@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const price = document.querySelector("h4#coffee-cost");
     const orderList = document.querySelector("div#order-list")
     const orderButton = document.querySelector("button#order-btn")
+    const totalCost = document.querySelector("h2#total-cost")
 
     const ingredientList = document.createElement("ul")
     ingredients.append(ingredientList);
@@ -95,6 +96,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const div = document.createElement("div");
         div.textContent = `1x ${globalCoffee.title}`
         orderList.append(div);
+
+
+        let cost = parseFloat(formattedPrice.replace('$', ""))
+        let costSum = cost += parseFloat(totalCost.innerText.replace("$", ""));
+        totalCost.textContent = formatPrices(costSum)
     }
 
     orderButtonFunc()
