@@ -112,18 +112,19 @@ document.addEventListener("DOMContentLoaded", () => {
         return `$${formatted}`
     }
 
-   
+    const submitBtn = document.querySelector("button#order-submit")
 
-    // .addEventListener("click", (e) => {
-    //     orderSubmission();
-    // })
+
+    submitBtn.addEventListener("click", () => {
+        orderSubmission();
+    })
 
     function orderSubmission() {
         orderList.empty()
 
         const orderSubmittedDiv = document.createElement("div")
         orderSubmittedDiv.textContent = "YOUR ORDER HAS BEEN SUBMITTED, THANK YOU FOR YOU PURCHASE!"
-        orderList.append(orderSubmittedDiv)
+       orderList.append(orderSubmittedDiv)
     }
     // END OF DOMCONTENTLOADED
 })
