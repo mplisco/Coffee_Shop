@@ -22,7 +22,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     border-style: solid;
-    
+    border-radius: 50px;
     outline-style: groove;
   }
 
@@ -88,7 +88,6 @@ body {
   #coffee-ingredients h2 {
     position: relative;
   }
-
 
   .button {
     position: relative;
