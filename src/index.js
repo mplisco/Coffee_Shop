@@ -1,111 +1,111 @@
-document.addEventListener("DOMContentLoaded", () => {
 
-    const url = "https://api.sampleapis.com/coffee/hot"
+  document.addEventListener("DOMContentLoaded", () => {
 
-    let globalCoffee;
+      const url ="https://api.sampleapis.com/coffee/hot"
 
-    const getData = () => {
-        fetch(url)
-            .then(res => res.json())
-            .then(coffeeDrinks => {
-                coffeeDrinks.map(coffee => {
-                    globalCoffee = coffee;
-                    coffeeMenu(globalCoffee);
-                })
+      let globalCoffee;
 
-                coffeeDescription(coffeeDrinks[0]);
-            })
-    }
+      const getData = () => {
+          fetch(url)
+              .then(res => res.json())
+              .then(coffeeDrinks => {
+                  coffeeDrinks.map(coffee => {
+                      globalCoffee = coffee;
+                      coffeeMenu(globalCoffee);
+                  })
 
-    getData();
+                  coffeeDescription(coffeeDrinks[0]);
+              })
+      }
 
-    const coffeeMenuDiv = document.querySelector("div#coffee-menu");
+      getData();
 
-    function coffeeMenu(coffee) {
-        const coffeeImg = document.createElement("img");
-        coffeeImg.src = coffee.image;
+      const coffeeMenuDiv = document.querySelector("div#coffee-menu");
 
-        coffeeImg.addEventListener("mouseover", (e) => {
-            e.target.style.height = "75px"
-            e.target.style.width = "75px"
+      function coffeeMenu(coffee) {
+          const coffeeImg = document.createElement("img");
+          coffeeImg.src = coffee.image;
 
-            setTimeout(() => {
-                e.target.style.height = ""
-                e.target.style.width = ""
-            }, 500)
-        })
+          coffeeImg.addEventListener("mouseover", (e) => {
+              e.target.style.height = "75px"
+              e.target.style.width = "75px"
 
-        coffeeImg.addEventListener("click", () => {
-            globalCoffee = coffee
-            coffeeDescription(globalCoffee);
-        })
+              setTimeout(() => {
+                  e.target.style.height = ""
+                  e.target.style.width = ""
+              }, 500)
+          })
 
-        coffeeMenuDiv.append(coffeeImg)
-    }
+          coffeeImg.addEventListener("click", () => {
+              globalCoffee = coffee
+              coffeeDescription(globalCoffee);
+          })
 
-    const descriptionImg = document.querySelector("img.coffee-img")
-    const coffeeName = document.querySelector("h2.name")
-    const description = document.querySelector("h3.description")
-    const ingredients = document.querySelector("div#coffee-ingredients")
-    const price = document.querySelector("h4#coffee-cost");
-    const orderList = document.querySelector("div#order-list")
-    const orderButton = document.querySelector("button#order-button")
+          coffeeMenuDiv.append(coffeeImg)
+      }
 
-    const ingredientList = document.createElement("ul")
-    ingredients.append(ingredientList);
+      const descriptionImg = document.querySelector("img.coffee-img")
+      const coffeeName = document.querySelector("h2.name")
+      const description = document.querySelector("h3.description")
+      const ingredients = document.querySelector("div#coffee-ingredients")
+      const price = document.querySelector("h4#coffee-cost");
+      const orderList = document.querySelector("div#order-list")
+      const orderButton = document.querySelector("button#order-btn")
 
-    let unFormattedPrices;
-    let formattedPrice;
+      const ingredientList = document.createElement("ul")
+      ingredients.append(ingredientList);
 
-    function coffeeDescription(coffee) {
-        descriptionImg.src = coffee.image;
-        coffeeName.textContent = coffee.title;
-        description.textContent = coffee.description;
+      let unFormattedPrices;
+      let formattedPrice;
 
-        if (coffee.ingredients.length === 1) {
-            unFormattedPrices = 1.25;
-            formattedPrice = formatPrices(unFormattedPrices);
-            price.textContent = formattedPrice;
-        } else if (coffee.ingredients.length === 2) {
-            unFormattedPrices = 2.00
-            formattedPrice = formatPrices(unFormattedPrices);
-            price.textContent = formattedPrice;
-        } else if (coffee.ingredients.length >= 3) {
-            unFormattedPrices = 3.50
-            formattedPrice = formatPrices(unFormattedPrices);
-            price.textContent = formattedPrice;
-        }
+      function coffeeDescription(coffee) {
+          descriptionImg.src = coffee.image;
+          coffeeName.textContent = coffee.title;
+          description.textContent = coffee.description;
 
-        orderButton.addEventListener("click", () => {
-            globalCoffee = coffee
-            orderButtonFunc(globalCoffee)
-        })
+          if (coffee.ingredients.length === 1) {
+              unFormattedPrices = 1.25;
+              formattedPrice = formatPrices(unFormattedPrices);
+              price.textContent = formattedPrice;
+          } else if (coffee.ingredients.length === 2) {
+              unFormattedPrices = 2.00
+              formattedPrice = formatPrices(unFormattedPrices);
+              price.textContent = formattedPrice;
+          } else if (coffee.ingredients.length >= 3) {
+              unFormattedPrices = 3.50
+              formattedPrice = formatPrices(unFormattedPrices);
+              price.textContent = formattedPrice;
+          }
 
-        ingredientList.replaceChildren()
-        coffee.ingredients.forEach(ingredient => {
-            const coffeeIngredient = document.createElement("li");
-            coffeeIngredient.innerText = ingredient;
+          orderButton.addEventListener("click", () => {
+              orderButtonFunc(coffee)
+          })
 
-
-            ingredientList.append(coffeeIngredient);
-        })
-    }
+          ingredientList.replaceChildren()
+          coffee.ingredients.forEach(ingredient => {
+              const coffeeIngredient = document.createElement("li");
+              coffeeIngredient.innerText = ingredient;
 
 
-
-    function orderButtonFunc(coffee) {
-     const div = document.createElement("div");
-     div.textContent = 1`${x} ${coffee.title}`
-     orderList.append(div);
-    }
-
-    orderButtonFunc()
+              ingredientList.append(coffeeIngredient);
+          })
+      }
 
 
-    function formatPrices(prices) {
-     let formatted = Number.parseFloat(prices).toFixed(2)
-     return `$${formatted}`
-    }
 
-    // END OF DOMCONTENTLOADED
-})
+      function orderButtonFunc(coffee) {
+       const div = document.createElement("div");
+       div.textContent = `1x ${coffee.title}`
+       orderList.append(div);
+      }
+
+      orderButtonFunc()
+
+
+      function formatPrices(prices) {
+       let formatted = Number.parseFloat(prices).toFixed(2)
+       return `$${formatted}`
+      }
+
+      // END OF DOMCONTENTLOADED
+  })
