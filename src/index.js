@@ -112,9 +112,11 @@ document.addEventListener("DOMContentLoaded", () => {
         return `$${formatted}`
     }
 
-    .addEventListener("click", (e) => {
-        orderSubmission();
-    })
+   
+
+    // .addEventListener("click", (e) => {
+    //     orderSubmission();
+    // })
 
     function orderSubmission() {
         orderList.empty()
