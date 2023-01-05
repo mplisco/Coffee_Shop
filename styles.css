@@ -13,7 +13,7 @@ body {
     width: 100%;
     color: #343139;
     background-color: #c4b7a7;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
     letter-spacing: 1px;
@@ -22,7 +22,23 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
+  header h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  header p {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  }
 
   #coffee-menu {
     display: flex;
