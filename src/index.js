@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function orderButtonFunc() {
         const div = document.createElement("div");
         div.textContent = `1x ${globalCoffee.title}`
+
         orderList.append(div);
 
 
@@ -112,19 +113,5 @@ document.addEventListener("DOMContentLoaded", () => {
         return `$${formatted}`
     }
 
-    const submitBtn = document.querySelector("button#order-submit")
-
-
-    submitBtn.addEventListener("click", () => {
-        orderSubmission();
-    })
-
-    function orderSubmission() {
-        orderList.empty()
-
-        const orderSubmittedDiv = document.createElement("div")
-        orderSubmittedDiv.textContent = "YOUR ORDER HAS BEEN SUBMITTED, THANK YOU FOR YOU PURCHASE!"
-       orderList.append(orderSubmittedDiv)
-    }
     // END OF DOMCONTENTLOADED
 })
