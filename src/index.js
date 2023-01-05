@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-
     const url = "https://api.sampleapis.com/coffee/hot"
 
     let globalCoffee;
