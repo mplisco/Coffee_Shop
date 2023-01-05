@@ -21,6 +21,9 @@ body {
     margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
+    border-style: solid;
+    
+    outline-style: groove;
   }
 
   header h2 {
