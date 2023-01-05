@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const url = "https://api.sampleapis.com/coffee/hot"
 
     let globalCoffee;
+    let globalCoffeeDrinks;
 
     const getData = () => {
         fetch(url)
@@ -13,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     globalCoffee = coffee;
                     coffeeMenu(globalCoffee);
                 })
-
-                coffeeDescription(coffeeDrinks[0]);
+                   globalCoffeeDrinks = coffeeDrinks;
+                // coffeeDescription(globalCoffeeDrinks[0]);
             })
     }
 
