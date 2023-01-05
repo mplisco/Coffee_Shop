@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const orderList = document.querySelector("div#order-list")
     const orderButton = document.querySelector("button#order-btn")
     const totalCost = document.querySelector("h2#total-cost")
+    const submitBtn = document.querySelector("button#submit-order")
 
     const ingredientList = document.createElement("ul")
     ingredients.append(ingredientList);
@@ -111,5 +112,14 @@ document.addEventListener("DOMContentLoaded", () => {
         return `$${formatted}`
     }
 
+    submitBtn.addEventListener("click", () => {
+        orderList.replaceChildren();
+        totalCost.innerText = parseFloat("0.00");
+
+        const orderSubmittedDiv = document.createElement("div")
+        orderSubmittedDiv.textContent = "YOUR ORDER HAS BEEN SUBMITTED, THANK YOU FOR YOU PURCHASE!"
+        orderList.append(orderSubmittedDiv)
+
+    })
     // END OF DOMCONTENTLOADED
 })
