@@ -20,6 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     getData();
 
+    const signUpBtn = document.querySelector('#sign-up')
+    signUpBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        alert('You have successfully signed up for the Founder\'s House Mailing List!');
+    })
+
     const coffeeMenuDiv = document.querySelector("div#coffee-menu");
 
     function coffeeMenu(coffee) {
