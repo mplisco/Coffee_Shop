@@ -49,26 +49,38 @@ document.addEventListener("DOMContentLoaded", () => {
     const description = document.querySelector("h3.description")
     const ingredients = document.querySelector("div#coffee-ingredients")
     const price = document.querySelector("h4#coffee-cost");
+    const orderList = document.querySelector("div#order-list")
+    const orderButton = document.querySelector("button#order-button")
 
     const ingredientList = document.createElement("ul")
     ingredients.append(ingredientList);
 
-    let prices;
+    let unFormattedPrices;
+    let formattedPrice;
+
     function coffeeDescription(coffee) {
         descriptionImg.src = coffee.image;
         coffeeName.textContent = coffee.title;
         description.textContent = coffee.description;
 
         if (coffee.ingredients.length === 1) {
-            prices = 1.25;
-            price.textContent = formatPrices(prices);
+            unFormattedPrices = 1.25;
+            formattedPrice = formatPrices(unFormattedPrices);
+            price.textContent = formattedPrice;
         } else if (coffee.ingredients.length === 2) {
-             prices = 2.00
-            price.textContent = formatPrices(prices)
+            unFormattedPrices = 2.00
+            formattedPrice = formatPrices(unFormattedPrices);
+            price.textContent = formattedPrice;
         } else if (coffee.ingredients.length >= 3) {
-            prices = 3.50
-            price.textContent = formatPrices(prices)
+            unFormattedPrices = 3.50
+            formattedPrice = formatPrices(unFormattedPrices);
+            price.textContent = formattedPrice;
         }
+
+        orderButton.addEventListener("click", () => {
+            globalCoffee = coffee
+            orderButtonFunc(globalCoffee)
+        })
 
         ingredientList.replaceChildren()
         coffee.ingredients.forEach(ingredient => {
@@ -81,21 +93,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    const orderList = document.querySelector("ul#order-list")
-    function orderButtonFunc() {
-        const orderButton = document.querySelector("button#order-button");
-        orderButton.addEventListener("click", (e) => {
-            const order = document.createElement("li");
-            order.textContent = 1`x${globalCoffee.title}`
-            orderList.append(order)
-        })
+
+    function orderButtonFunc(coffee) {
+     const div = document.createElement("div");
+     div.textContent = 1`${x} ${coffee.title}`
+     orderList.append(div);
     }
+
     orderButtonFunc()
 
 
     function formatPrices(prices) {
-     let formattedPrice = Number.parseFloat(prices).toFixed(2)
-     return `$${formattedPrice}`
+     let formatted = Number.parseFloat(prices).toFixed(2)
+     return `$${formatted}`
     }
 
     // END OF DOMCONTENTLOADED
