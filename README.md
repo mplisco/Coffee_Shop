@@ -4,18 +4,30 @@ A simple coffee shop program using html/css, javascript, and an external API
 
 
 ## General Description
-general description placeholder
+Founder’s House Coffee Shop serves coffee with a mission. Built by startup founders, for startup founders, the Founder’s House provides an excellent place to grab a cup of delicious coffee and co-work or socialize with other startup founders. Additionally, for every purchase made, Founder’s House will round up to the nearest dollar and make a donation to the Pharos Founder’s Collective in support of entrepreneurial mental health.
 
 ## Features
+Our website includes multiple features.
+We have a feature that allows the menu item to enlarge upon hover.
+We have another feauture that places the menu item of your choosing 
+in the front and center of the screen when you  click on the image.
+Additionally, we have the coffee name, price, description, and ingredients
+all appear when you click on your desired coffee image.
+Another feature our website boasts is the order submit button. When you 
+decide to order a cofee, you click on the order button and your order will 
+appear on the screen.
+Every additional coffee you order will be added to the screen 
+and the total price of all your coffees will be displayed.
+
+
 ### Backend API Endpoints
 
-backend endpoints placeholder
-
+GET: coffee/hot
+GET: coffee/hot/1
 
 
 ## Environment Setup
 
-environment setup  placeholder
 
 
 ### Clone repository
@@ -44,4 +56,8 @@ npm i -g npm
 
 
 ## Usage
-usage placeholder (how our program should be used)
+Use this website to order a coffee by hovering over the menu items on the top
+of the page.
+To select a coffee you would like to order, click on the image.
+When you're ready to order, click the order button and your 
+coffee will be added together with your updated total.
