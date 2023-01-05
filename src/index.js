@@ -53,17 +53,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const ingredientList = document.createElement("ul")
     ingredients.append(ingredientList);
 
+    let prices;
     function coffeeDescription(coffee) {
         descriptionImg.src = coffee.image;
         coffeeName.textContent = coffee.title;
         description.textContent = coffee.description;
 
         if (coffee.ingredients.length === 1) {
-            price.textContent = "$1.25";
+            prices = 1.25;
+            price.textContent = formatPrices(prices);
         } else if (coffee.ingredients.length === 2) {
-            price.textContent = "$2.00"
+             prices = 2.00
+            price.textContent = formatPrices(prices)
         } else if (coffee.ingredients.length >= 3) {
-            price.textContent = "$3.50"
+            prices = 3.50
+            price.textContent = formatPrices(prices)
         }
 
         ingredientList.replaceChildren()
@@ -89,6 +93,10 @@ document.addEventListener("DOMContentLoaded", () => {
     orderButtonFunc()
 
 
+    function formatPrices(prices) {
+     let formattedPrice = Number.parseFloat(prices).toFixed(2)
+     return `$${formattedPrice}`
+    }
 
     // END OF DOMCONTENTLOADED
 })
