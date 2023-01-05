@@ -74,10 +74,22 @@ body {
     left: 0;
     border-radius: 0.25rem;
     background-color: #c4b747;
-    font-size: 20px;
   }
 
-  #order-list li{
+  .block {
+    width: 5%;
+    height: 5%;
+    border: none;
+    padding: 14px 28px;
+    background-color: #c4b7a7;
+    color: #343139;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  #order-list li {
     background-color: #c4b7a7;
     border-radius: 0.25rem;
     padding: 0.5rem;
