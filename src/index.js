@@ -19,7 +19,22 @@ document.addEventListener("DOMContentLoaded", () => {
             })
     }
 
+
     getData();
+
+    const signUpBtn = document.querySelector('#sign-up')
+    signUpBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        alert('You have successfully signed up for the Founder\'s House Mailing List!');
+
+        const nameInput =  document.querySelector("#name")
+        const emailInput =  document.querySelector("#email")
+
+        nameInput.value = ""
+        emailInput.value = ""
+
+
+    })
 
     const coffeeMenuDiv = document.querySelector("div#coffee-menu");
 
@@ -97,7 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
     function orderButtonFunc() {
         const div = document.createElement("div");
         div.textContent = `1x ${globalCoffee.title}`
-
         orderList.append(div);
 
 
