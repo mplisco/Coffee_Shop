@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     coffeeMenu(globalCoffee);
                 })
                    globalCoffeeDrinks = coffeeDrinks;
-                // coffeeDescription(globalCoffeeDrinks[0]);
             })
     }
 
