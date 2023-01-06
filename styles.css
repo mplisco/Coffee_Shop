@@ -87,6 +87,7 @@ body {
   }
   #coffee-ingredients h2 {
     position: relative;
+    text-decoration: underline;
   }
 
   .button {
