@@ -43,6 +43,13 @@ body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
   }
 
+  header hr {
+    background-color: black;
+    border: 5px solid black;
+    border-radius: 5px;
+    
+  }
+
   #coffee-menu {
     display: flex;
   overflow-x: auto;
